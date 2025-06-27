@@ -199,10 +199,6 @@ function JuceComboBox({ identifier }) {
   );
 }
 
-const sayHello = Juce.getNativeFunction("sayHello");
-
-const SpectrumDataReceiver_eventId = "spectrumData";
-
 
 function App() {
   const controlParameterIndexUpdater = new Juce.ControlParameterIndexUpdater(
@@ -215,10 +211,6 @@ function App() {
 
   const [open, setOpen] = useState(false);
   const [snackbarMessage, setMessage] = useState("No message received yet");
-
-  const openSnackbar = () => {
-    setOpen(true);
-  };
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
