@@ -23,3 +23,5 @@ pnpm-debug.log*
 *.sw?
 ._*
 **/._*
+
+src/juce_stuff/juce_gui_extra/*
