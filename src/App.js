@@ -25,6 +25,102 @@ import * as Juce from "juce-framework-frontend";
 
 import "./App.css";
 
+import { styled } from '@mui/material/styles';
+
+const MetalSlider = styled(Slider)(({ theme }) => ({
+  color: '#000000',
+  height: 15,
+  padding: '0px',
+  
+  '& .MuiSlider-track': {
+    border: 'none',
+    backgroundColor: '#ffffff',
+    height: '20%',
+    borderRadius: 0,
+  },
+  
+  '& .MuiSlider-rail': {
+    backgroundColor: '#ffffff',
+    border: '1.8px solid #000000',
+    height: '100%',
+    borderRadius: 0,
+    opacity: 1,
+  },
+  
+  '& .MuiSlider-thumb': {
+    height: 15,
+    width: 10,
+    borderRadius: 0,
+    backgroundColor: '#000000',
+    border: 'none',
+    boxShadow: 'none',
+    
+    '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
+      boxShadow: 'none',
+      backgroundColor: '#000000',
+    },
+    
+    '&:before': {
+      display: 'none',
+    },
+  },
+  
+  '& .MuiSlider-valueLabel': {
+    display: 'none',
+  },
+}));
+
+const MetalTypography = styled(Typography)(({ theme }) => ({
+  fontFamily: 'Helvetica, Arial, sans-serif',
+  fontSize: '14px',
+  fontWeight: 'normal',
+  color: '#000000',
+  backgroundColor: '#ffffff',
+  textAlign: 'right',
+  marginTop: '6px',
+  padding: '2px 4px',
+  border: 'none',
+  outline: 'none',
+}));
+
+const MetalCheckbox = styled(Checkbox)(({ theme }) => ({
+  padding: '4px',
+  
+  '& .MuiSvgIcon-root': {
+    fontSize: '18px', // Much smaller than default
+    color: '#000000',
+  },
+  
+  '&:not(.Mui-checked) .MuiSvgIcon-root': {
+    backgroundColor: '#ffffff',
+    border: '1.8px solid #000000',
+    borderRadius: '2px',
+  },
+  
+  '&.Mui-checked .MuiSvgIcon-root': {
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    border: '1.8px solid #000000',
+    borderRadius: '2px',
+  },
+  
+  '&:hover': {
+    backgroundColor: 'transparent',
+  },
+}));
+
+const MetalFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
+  margin: 0,
+  
+  '& .MuiFormControlLabel-label': {
+    fontFamily: 'Helvetica, Arial, sans-serif',
+    fontSize: '14px',
+    fontWeight: 'normal',
+    color: '#000000',
+    marginLeft: '6px',
+  },
+}));
+
 // Custom attributes in React must be in all lower case
 const controlParameterIndexAnnotation = "controlparameterindex";
 
@@ -71,18 +167,23 @@ function JuceSlider({ identifier, title }) {
   function calculateValue() {
     return sliderState.getScaledValue();
   }
-
+  const formatValue = (value) => {
+    const num = parseFloat(value);
+    if (num >= 100) return num.toFixed(0); // No decimals for large numbers
+    if (num >= 10) return num.toFixed(1);  // 1 decimal for medium numbers
+    return num.toFixed(2);                 // 2 decimals for small numbers
+  };
   return (
-    <Box
-      {...{
-        [controlParameterIndexAnnotation]:
-          sliderState.properties.parameterIndex,
-      }}
-    >
-      <Typography sx={{ mt: 1.5 }}>
-        {properties.name}: {sliderState.getScaledValue()} {properties.label}
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+      <Typography variant="body2" sx={{ 
+          minWidth: '50px', 
+          maxWidth: '20px', 
+          textAlign: 'right',
+          fontSize: '12px'
+        }}>
+        {properties.name}:
       </Typography>
-      <Slider
+      <MetalSlider
         aria-label={title}
         value={value}
         scale={calculateValue}
@@ -92,9 +193,18 @@ function JuceSlider({ identifier, title }) {
         step={1 / (properties.numSteps - 1)}
         onChangeCommitted={changeCommitted}
         onMouseDown={mouseDown}
+        sx={{ flexGrow: 1 }}
       />
-    </Box>
-  );
+      <MetalTypography sx={{ 
+        minWidth: '20px', 
+        maxWidth: '20px', 
+        textAlign: 'right',
+        fontSize: '12px'
+      }}>
+        {parseFloat(sliderState.getScaledValue()).toFixed(1)}
+      </MetalTypography>
+  </Box>
+);
 }
 
 function JuceCheckbox({ identifier }) {
@@ -129,74 +239,31 @@ function JuceCheckbox({ identifier }) {
 
   const cb = <Checkbox checked={value} onChange={handleChange} />;
 
-  return (
-    <Box
-      {...{
-        [controlParameterIndexAnnotation]:
-          checkboxState.properties.parameterIndex,
-      }}
-    >
-      <FormGroup>
-        <FormControlLabel control={cb} label={properties.name} />
-      </FormGroup>
-    </Box>
-  );
-}
-
-function JuceComboBox({ identifier }) {
-  JuceComboBox.propTypes = {
-    identifier: PropTypes.string,
-  };
-
-  const comboBoxState = Juce.getComboBoxState(identifier);
-
-  const [value, setValue] = useState(comboBoxState.getChoiceIndex());
-  const [properties, setProperties] = useState(comboBoxState.properties);
-
-  const handleChange = (event) => {
-    comboBoxState.setChoiceIndex(event.target.value);
-    setValue(event.target.value);
-  };
-
-  useEffect(() => {
-    const valueListenerId = comboBoxState.valueChangedEvent.addListener(() => {
-      setValue(comboBoxState.getChoiceIndex());
-    });
-    const propertiesListenerId =
-      comboBoxState.propertiesChangedEvent.addListener(() => {
-        setProperties(comboBoxState.properties);
-      });
-
-    return function cleanup() {
-      comboBoxState.valueChangedEvent.removeListener(valueListenerId);
-      comboBoxState.propertiesChangedEvent.removeListener(propertiesListenerId);
-    };
-  });
-
-  return (
-    <Box
-      {...{
-        [controlParameterIndexAnnotation]:
-          comboBoxState.properties.parameterIndex,
-      }}
-    >
-      <FormControl fullWidth>
-        <InputLabel id={identifier}>{properties.name}</InputLabel>
-        <Select
-          labelId={identifier}
-          value={value}
-          label={properties.name}
-          onChange={handleChange}
-        >
-          {properties.choices.map((choice, i) => (
-            <MenuItem value={i} key={i}>
-              {choice}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </Box>
-  );
+return (
+  <Box
+    {...{
+      [controlParameterIndexAnnotation]: checkboxState.properties.parameterIndex,
+    }}
+    sx={{
+      display: 'flex',
+      alignItems: 'center',
+      minHeight: '32px',
+    }}
+  >
+    <FormGroup>
+      <MetalFormControlLabel 
+        control={
+          <MetalCheckbox 
+            checked={cb.props.checked}
+            onChange={cb.props.onChange}
+            // Add any other props your cb needs
+          />
+        } 
+        label={properties.name} 
+      />
+    </FormGroup>
+  </Box>
+);
 }
 
 
@@ -233,26 +300,36 @@ function App() {
     </>
   );
 
-  return (
+   return (
     <div className="looper-plugin">
-
       <div className="plugin-header">
-        <h1 className="plugin-title">Looper Delay</h1>
+        <h1 className="plugin-title">616</h1>
       </div>
 
-              <div className="controls-grid">
+      <div className="controls-grid">
         {/* Loop Controls */}
-        <div className="control-section">
+        <div className="control-section loop-section" >
           <h3 className="section-title">Loop Controls</h3>
           
-          <JuceSlider identifier="samplingRate" title="Sampling Rate" />
-          <JuceComboBox identifier="loopLength" />
+          <JuceSlider identifier="samplingRate" title="Coarse" />
+          <JuceSlider identifier="loopLength" title="Fine"/>
           <JuceSlider identifier="feedback" title="Feedback" />
           <JuceSlider identifier="mix" title="Mix" />
         </div>
 
+               {/* Modulation Section */}
+        <div className="control-section modulation-section">
+          <h3 className="section-title">Modulation</h3>
+          
+          <div className="mod-controls">
+            <JuceSlider identifier="rate" title="Mod Rate" />
+            <JuceSlider identifier="depth" title="Mod Depth" />
+          </div>
+        </div>
+      </div>
+
         {/* Transport Controls */}
-        <div className="control-section">
+        <div className="control-section transport-section">
           <h3 className="section-title">Transport</h3>
           
           <div className="button-row">
@@ -261,19 +338,13 @@ function App() {
           </div>
         </div>
 
-        {/* Modulation Section */}
-        <div className="control-section modulation-section">
-          <h3 className="section-title">Modulation</h3>
-          
-          <div className="mod-controls">
-            <JuceSlider identifier="modRate" title="Mod Rate" />
-            <JuceSlider identifier="modDepth" title="Mod Depth" />
-          </div>
-        </div>
-      </div>
+      <style jsx>{`
+
+      `}</style>
     </div>
   );
 }
+
 export default App;
 
 
