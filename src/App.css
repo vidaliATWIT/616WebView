@@ -2,8 +2,8 @@
     width: 540px;
     height: 400px;
     background: white;
-    border: 2px solid black;
-    padding: 16px;
+    border: 0px solid black;
+    padding: 5px 40px;
     font-family: 'Helvetica', Arial, sans-serif;
     color: black;
     display: flex;
@@ -18,7 +18,7 @@
 
 .plugin-title {
     font-size: 18px;
-    font-weight: normal;
+    font-weight: bold;
     margin: 0;
     color: black;
 }
@@ -49,6 +49,7 @@
 
 .modulation-section {
     grid-column: 1 / -1;
+    flex-direction: column;
     padding-bottom: 10px;
 }
 
@@ -85,7 +86,7 @@
 }
 
 .mod-controls {
-    display: grid;
+
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }

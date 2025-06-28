@@ -29,44 +29,42 @@ import { styled } from '@mui/material/styles';
 
 const MetalSlider = styled(Slider)(({ theme }) => ({
   color: '#000000',
-  height: 15,
-  padding: '0px',
+  height: '20px',
+  padding: '0% 5%',
   
   '& .MuiSlider-track': {
     border: 'none',
     backgroundColor: '#ffffff',
-    height: '20%',
+    height: '0%',
     borderRadius: 0,
   },
-  
   '& .MuiSlider-rail': {
     backgroundColor: '#ffffff',
     border: '1.8px solid #000000',
     height: '100%',
     borderRadius: 0,
     opacity: 1,
+    boxSizing: 'border-box',
+    //width: '372px',
+    width: '103%',
   },
-  
   '& .MuiSlider-thumb': {
-    height: 15,
-    width: 10,
+    height: 20,
     borderRadius: 0,
     backgroundColor: '#000000',
     border: 'none',
     boxShadow: 'none',
-    
+    marginLeft: '10%',
+    // The key: make the thumb smaller so it fits within bounds
+    width: 10, // Reduced from 10 to 8
     '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
       boxShadow: 'none',
       backgroundColor: '#000000',
+      // Keep the same size on hover/focus
     },
-    
     '&:before': {
       display: 'none',
     },
-  },
-  
-  '& .MuiSlider-valueLabel': {
-    display: 'none',
   },
 }));
 
@@ -78,7 +76,7 @@ const MetalTypography = styled(Typography)(({ theme }) => ({
   backgroundColor: '#ffffff',
   textAlign: 'right',
   marginTop: '6px',
-  padding: '2px 4px',
+  padding: '2px 50px',
   border: 'none',
   outline: 'none',
 }));
@@ -303,7 +301,7 @@ function App() {
    return (
     <div className="looper-plugin">
       <div className="plugin-header">
-        <h1 className="plugin-title">616</h1>
+        <h1 className="plugin-title">616 Digital Delay</h1>
       </div>
 
       <div className="controls-grid">
