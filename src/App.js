@@ -21,7 +21,7 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
   color: '#000000',
   height: '20px',
   padding: '0%',
-  left: '25px',
+  left: '6.5%',
   '& .MuiSlider-track': {
     border: 'none',
     backgroundColor: '#ffffff',
