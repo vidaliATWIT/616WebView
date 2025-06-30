@@ -1,20 +1,9 @@
-
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-
 import Box from "@mui/material/Container";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
@@ -26,27 +15,28 @@ import * as Juce from "juce-framework-frontend";
 import "./App.css";
 
 import { styled } from '@mui/material/styles';
+import { ForkLeft } from "@mui/icons-material";
 
 const MetalSlider = styled(Slider)(({ theme }) => ({
   color: '#000000',
   height: '20px',
-  padding: '0% 5%',
-  
+  padding: '0%',
+  left: '25px',
   '& .MuiSlider-track': {
     border: 'none',
     backgroundColor: '#ffffff',
     height: '0%',
-    borderRadius: 0,
   },
   '& .MuiSlider-rail': {
+    position: 'relative',
+    width: '105%',
     backgroundColor: '#ffffff',
     border: '1.8px solid #000000',
     height: '100%',
     borderRadius: 0,
     opacity: 1,
     boxSizing: 'border-box',
-    //width: '372px',
-    width: '103%',
+    right: '6px',
   },
   '& .MuiSlider-thumb': {
     height: 20,
@@ -54,7 +44,7 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
     backgroundColor: '#000000',
     border: 'none',
     boxShadow: 'none',
-    marginLeft: '10%',
+    marginLeft: '0%',
     // The key: make the thumb smaller so it fits within bounds
     width: 10, // Reduced from 10 to 8
     '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {

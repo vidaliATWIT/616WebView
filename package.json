@@ -45,6 +45,7 @@
   "devDependencies": {
     "eslint": "^8.43.0",
     "eslint-plugin-react": "^7.32.2",
-    "npm-build-zip": "^1.0.4"
+    "npm-build-zip": "^1.0.4",
+    "sass": "^1.89.2"
   }
 }
