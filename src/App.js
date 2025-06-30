@@ -64,7 +64,7 @@ const MetalTypography = styled(Typography)(({ theme }) => ({
   fontWeight: 'normal',
   color: '#000000',
   backgroundColor: '#ffffff',
-  textAlign: 'right',
+  textAlign: 'left',
   marginTop: '6px',
   padding: '2px 50px',
   border: 'none',
@@ -99,7 +99,6 @@ const MetalCheckbox = styled(Checkbox)(({ theme }) => ({
 
 const MetalFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
   margin: 0,
-  
   '& .MuiFormControlLabel-label': {
     fontFamily: 'Helvetica, Arial, sans-serif',
     fontSize: '14px',
