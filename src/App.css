@@ -3,7 +3,7 @@
     height: 400px;
     background: white;
     border: 0px solid black;
-    padding: 5px 40px;
+    padding: 0px 40px;
     font-family: 'Helvetica', Arial, sans-serif;
     color: black;
     display: flex;
@@ -13,14 +13,23 @@
 
 .plugin-header {
     text-align: left;
-    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 10px;
 }
 
 .plugin-title {
-    font-size: 18px;
     font-weight: bold;
-    margin: 0;
     color: black;
+}
+
+.developer-name {
+    font-style: italic;
+    font-weight: normal;
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    color: black;
+    margin-left: auto;
 }
 
 .controls-grid {
@@ -70,7 +79,6 @@
     font-size: 12px;
     color: black;
     margin-bottom: 4px;
-    text-align: right;
 }
 
 .button-row {
@@ -86,7 +94,6 @@
 }
 
 .mod-controls {
-
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }

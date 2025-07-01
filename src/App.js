@@ -15,7 +15,6 @@ import * as Juce from "juce-framework-frontend";
 import "./App.css";
 
 import { styled } from '@mui/material/styles';
-import { ForkLeft } from "@mui/icons-material";
 
 const MetalSlider = styled(Slider)(({ theme }) => ({
   color: '#000000',
@@ -122,6 +121,7 @@ function JuceSlider({ identifier, title }) {
 
   const [value, setValue] = useState(sliderState.getNormalisedValue());
   const [properties, setProperties] = useState(sliderState.properties);
+  console.log(properties)
 
   const handleChange = (event, newValue) => {
     sliderState.setNormalisedValue(newValue);
@@ -154,21 +154,16 @@ function JuceSlider({ identifier, title }) {
   function calculateValue() {
     return sliderState.getScaledValue();
   }
-  const formatValue = (value) => {
-    const num = parseFloat(value);
-    if (num >= 100) return num.toFixed(0); // No decimals for large numbers
-    if (num >= 10) return num.toFixed(1);  // 1 decimal for medium numbers
-    return num.toFixed(2);                 // 2 decimals for small numbers
-  };
+  
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+    <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1, width: '110%', right: '7.2%'}}>
       <Typography variant="body2" sx={{ 
-          minWidth: '50px', 
-          maxWidth: '20px', 
-          textAlign: 'right',
-          fontSize: '12px'
-        }}>
-        {properties.name}:
+        textAlign: 'right',
+        minWidth: '20%', 
+        maxWidth: '20%', 
+        fontSize: '12px'
+      }}>
+      {properties.name}
       </Typography>
       <MetalSlider
         aria-label={title}
@@ -185,7 +180,7 @@ function JuceSlider({ identifier, title }) {
       <MetalTypography sx={{ 
         minWidth: '20px', 
         maxWidth: '20px', 
-        textAlign: 'right',
+        textAlign: 'left',
         fontSize: '12px'
       }}>
         {parseFloat(sliderState.getScaledValue()).toFixed(1)}
@@ -290,14 +285,14 @@ function App() {
    return (
     <div className="looper-plugin">
       <div className="plugin-header">
-        <h1 className="plugin-title">616 Digital Delay</h1>
+        <h1 className="plugin-title">616 DIGITAL DELAY</h1>
+        <h1 className="developer-name">Cillic Audio</h1>
       </div>
 
       <div className="controls-grid">
         {/* Loop Controls */}
         <div className="control-section loop-section" >
           <h3 className="section-title">Loop Controls</h3>
-          
           <JuceSlider identifier="samplingRate" title="Coarse" />
           <JuceSlider identifier="loopLength" title="Fine"/>
           <JuceSlider identifier="feedback" title="Feedback" />
