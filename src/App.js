@@ -80,14 +80,14 @@ const MetalCheckbox = styled(Checkbox)(({ theme }) => ({
   
   '&:not(.Mui-checked) .MuiSvgIcon-root': {
     backgroundColor: '#ffffff',
-    border: '1.8px solid #000000',
+    //border: '1.8px solid #000000',
     borderRadius: '2px',
   },
   
   '&.Mui-checked .MuiSvgIcon-root': {
     backgroundColor: '#000000',
     color: '#ffffff',
-    border: '1.8px solid #000000',
+    //border: '1.8px solid #000000',
     borderRadius: '2px',
   },
   
@@ -121,7 +121,6 @@ function JuceSlider({ identifier, title }) {
 
   const [value, setValue] = useState(sliderState.getNormalisedValue());
   const [properties, setProperties] = useState(sliderState.properties);
-  console.log(properties)
 
   const handleChange = (event, newValue) => {
     sliderState.setNormalisedValue(newValue);
@@ -154,6 +153,15 @@ function JuceSlider({ identifier, title }) {
   function calculateValue() {
     return sliderState.getScaledValue();
   }
+
+  function formatValue() {
+    console.log(properties);
+    if (properties.name=="Coarse" || properties.name=='Fine') {
+      return parseFloat(sliderState.getScaledValue()).toFixed(0);
+    } else {
+      return parseFloat(sliderState.getScaledValue()).toFixed(1);
+    }
+  }
   
   return (
     <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1, width: '110%', right: '7.2%'}}>
@@ -183,7 +191,7 @@ function JuceSlider({ identifier, title }) {
         textAlign: 'left',
         fontSize: '12px'
       }}>
-        {parseFloat(sliderState.getScaledValue()).toFixed(1)}
+        {formatValue()}
       </MetalTypography>
   </Box>
 );
