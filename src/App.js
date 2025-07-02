@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import Button from "@mui/material/Button";
 
 import { React, useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
@@ -68,6 +69,61 @@ const MetalTypography = styled(Typography)(({ theme }) => ({
   padding: '2px 50px',
   border: 'none',
   outline: 'none',
+}));
+
+const MetalButton = styled(Button)(({ theme }) => ({
+  // Background styling matching the C++ code
+  backgroundColor: '#ffffff', // white background (normal state)
+  border: '1px solid #000000', // black border, 1px width
+  borderRadius: 0, // rectangular shape (no rounded corners)
+  
+  // Font styling from getTextButtonFont
+  fontFamily: 'Helvetica, Arial, sans-serif',
+  fontSize: '7px', // 60% of button height equivalent
+  fontWeight: 'normal',
+  color: '#000000', // black text
+  textTransform: 'none', // disable MUI's default uppercase transform
+  
+  // Layout and positioning (matching drawButtonText indentation)
+  padding: '0.3em 1.5em', // yIndent equivalent
+  textAlign: 'center',
+  lineHeight: 1.2,
+  
+  // Remove MUI's default styling
+  boxShadow: 'none',
+  minWidth: 'auto',
+  
+  '& .MuiButton-label': {
+    transform: 'translateX(200px)', // adjust the -2px value as needed
+  },
+  // Hover state (shouldDrawButtonAsHighlighted)
+  '&:hover': {
+    backgroundColor: '#d3d3d3', // lightgrey
+    border: '1px solid #000000',
+    boxShadow: 'none',
+  },
+  
+  // Active/pressed state (shouldDrawButtonAsDown)  
+  '&:active': {
+    backgroundColor: '#ffffff', // white when pressed
+    border: '1px solid #000000',
+    boxShadow: 'none',
+  },
+  
+  // Focus state
+  '&:focus': {
+    backgroundColor: '#ffffff',
+    border: '1px solid #000000',
+    boxShadow: 'none',
+  },
+  
+  // Disabled state
+  '&:disabled': {
+    backgroundColor: '#ffffff',
+    border: '1px solid #000000',
+    color: '#000000',
+    opacity: 0.6,
+  },
 }));
 
 const MetalCheckbox = styled(Checkbox)(({ theme }) => ({
@@ -154,9 +210,34 @@ function JuceSlider({ identifier, title }) {
     return sliderState.getScaledValue();
   }
 
+  // Loop Length funcs
+  function isPowerOfTwo(n) {
+    return n > 0 && (n & (n - 1)) === 0;
+  }
+
+function floorToPowerOfTwo(n) {
+    if (n <= 0) return 1;
+    // Find the highest power of 2 that is <= n
+    let power = 1;
+    while (power * 2 <= n) {
+        power *= 2;
+    }
+    return power;
+  }
+
   function formatValue() {
     console.log(properties);
     if (properties.name=="Coarse" || properties.name=='Fine') {
+      if (properties.name=="Coarse") {
+        const value = parseFloat(sliderState.getScaledValue());
+        const intValue = Math.floor(value);
+    
+        if (isPowerOfTwo(intValue)) {
+            return intValue.toString();
+        } else {
+            return floorToPowerOfTwo(intValue).toString();
+        }
+      }
       return parseFloat(sliderState.getScaledValue()).toFixed(0);
     } else {
       return parseFloat(sliderState.getScaledValue()).toFixed(1);
@@ -295,6 +376,22 @@ function App() {
       <div className="plugin-header">
         <h1 className="plugin-title">616 DIGITAL DELAY</h1>
         <h1 className="developer-name">Cillic Audio</h1>
+        <MetalButton className="preset-button"
+          variant="contained"
+          onClick={() => {
+            console.log("Load")
+          }}
+        >
+          Save
+        </MetalButton>
+        <MetalButton className="preset-button"
+          variant="contained"
+          onClick={() => {
+            console.log("Load")
+          }}
+        >
+          Load
+        </MetalButton>
       </div>
 
       <div className="controls-grid">
