@@ -337,6 +337,8 @@ return (
 );
 }
 
+const loadPreset = Juce.getNativeFunction("loadPreset");
+const savePreset = Juce.getNativeFunction("savePreset");
 
 function App() {
   const controlParameterIndexUpdater = new Juce.ControlParameterIndexUpdater(
@@ -379,7 +381,8 @@ function App() {
         <MetalButton className="preset-button"
           variant="contained"
           onClick={() => {
-            console.log("Load")
+            savePreset();
+            console.log("Save")
           }}
         >
           Save
@@ -387,6 +390,7 @@ function App() {
         <MetalButton className="preset-button"
           variant="contained"
           onClick={() => {
+            loadPreset();
             console.log("Load")
           }}
         >
