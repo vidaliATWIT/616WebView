@@ -289,6 +289,14 @@ function JuceCheckbox({ identifier }) {
   const [properties, setProperties] = useState(checkboxState.properties);
 
   const handleChange = (event) => {
+    console.log(properties.name + " was toggled");
+    if (properties.name=="Freeze") {
+      const reverseState = Juce.getToggleState("reverse")
+      console.log(reverseState);
+      if (reverseState.getValue) {
+         reverseState.setValue(false);
+      }
+    }
     checkboxState.setValue(event.target.checked);
     setValue(event.target.checked);
   };
