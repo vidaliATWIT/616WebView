@@ -425,6 +425,7 @@ function App() {
           
           <div className="button-row">
             <JuceCheckbox identifier="freeze" title="Freeze" />
+            <JuceCheckbox identifier="halfSpeed" title="X2" />
             <JuceCheckbox identifier="reverse" title="Reverse" />
           </div>
         </div>
