@@ -72,52 +72,45 @@ const MetalTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const MetalButton = styled(Button)(({ theme }) => ({
-  // Background styling matching the C++ code
   backgroundColor: '#ffffff', // white background (normal state)
   border: '1px solid #000000', // black border, 1px width
   borderRadius: 0, // rectangular shape (no rounded corners)
   
-  // Font styling from getTextButtonFont
   fontFamily: 'Helvetica, Arial, sans-serif',
   fontSize: '7px', // 60% of button height equivalent
   fontWeight: 'normal',
   color: '#000000', // black text
   textTransform: 'none', // disable MUI's default uppercase transform
   
-  // Layout and positioning (matching drawButtonText indentation)
   padding: '0.3em 1.5em', // yIndent equivalent
   textAlign: 'center',
   lineHeight: 1.2,
   
-  // Remove MUI's default styling
   boxShadow: 'none',
   minWidth: 'auto',
   
   '& .MuiButton-label': {
     transform: 'translateX(200px)', // adjust the -2px value as needed
   },
-  // Hover state (shouldDrawButtonAsHighlighted)
+
   '&:hover': {
     backgroundColor: '#d3d3d3', // lightgrey
     border: '1px solid #000000',
     boxShadow: 'none',
   },
   
-  // Active/pressed state (shouldDrawButtonAsDown)  
   '&:active': {
     backgroundColor: '#ffffff', // white when pressed
     border: '1px solid #000000',
     boxShadow: 'none',
   },
   
-  // Focus state
   '&:focus': {
     backgroundColor: '#ffffff',
     border: '1px solid #000000',
     boxShadow: 'none',
   },
   
-  // Disabled state
   '&:disabled': {
     backgroundColor: '#ffffff',
     border: '1px solid #000000',
@@ -130,7 +123,7 @@ const MetalCheckbox = styled(Checkbox)(({ theme }) => ({
   padding: '4px',
   
   '& .MuiSvgIcon-root': {
-    fontSize: '18px', // Much smaller than default
+    fontSize: '18px', 
     color: '#000000',
   },
   
@@ -163,7 +156,6 @@ const MetalFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
   },
 }));
 
-// Custom attributes in React must be in all lower case
 const controlParameterIndexAnnotation = "controlparameterindex";
 
 
