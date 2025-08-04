@@ -1,29 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.plugin-window {
+    margin: 0px;
+    width: 768px;
+    height: 515px;
+    background-color: #0B090A;
+    /* background: url("/src/res/icons/616_ref.png");*/
+}
+
+
+.plugin-header {
+    position: absolute;
+    top: 47px;
+    left: 47px;
+    width: 672px;
+    height: 72px;
+    flex-shrink: 0;
+}
+
+.plugin-title {
+    color: #F2F3ED;
+    font-family: "Helvetica Neue";
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.plugin-icon {
+    position: absolute;
+    top: -3px;
+    left: 599px;
+    width: 82px;
+    height: 82px;
+    aspect-ratio: 1/1;
+    
+    background: url("/src/res/icons/cillic_logo.png") no-repeat center;
+    
+    background-size: cover; /* or contain */
+}
+
+.plugin-sliders {
+    position: absolute;
+    top: 144px;
+    left: 47px;
+    display: inline-flex;
+    padding: 2px;
+    align-items: center;
+    gap: 53px;
+
+}
+
+.slider-container {
+    width: 100px;
+    height: 345px;
+}
+
+.slider-label {
+    width: 104px;
+    height: 36px;
+    flex-shrink: 0;
+    color: #F2F3ED;
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+.slider-block {
+    display: inline-flex;
+    gap: 22px;
+}
+
+.slider {
+    width: 39px;
+    height: 204px;
+}
+
+.label-block {
+    display: flex;
+    width: 100px;
+    align-items: center;
+    gap: 22px;
+    padding-top: 10px;
+}
+
+.param-label {
+    display: flex;
+    width: 39px;
+    height: 94px;
+    flex-direction: row;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.plugin-buttons {
+    position: absolute;
+    top: 179px;
+    left: 505px;
+    display: flex;
+    width: 214px;
+    padding: 2px 0;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 14px;
+}
+
+.button-container1 {
+    display: grid;
+    top: 2px;
+    right: 14px;
+    width: 100px;
+    height: 202px;
+    flex-shrink: 0;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.button-container2 {
+    display: grid;
+    top: 2px;
+    left: 14px;
+    width: 100px;
+    height: 202px;
+    flex-shrink: 0;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.button-label-svg {
+    color: #F2F3ED;
+    display: flex;
+    width: 132px;
+    height: 50px;
+}
+
+.button1 {
+  width: 50px;
+  height: 50px;
+  grid-row: 1;        /* Row 1 in 0-based = Row 2 in 1-based */
+  grid-column: 3;     /* Column 0 in 0-based = Column 1 in 1-based */
+  background-color: #F2F3ED;
+}
+
+.button2 {
+  width: 50px;
+  height: 50px;
+  grid-row: 2;        /* Row 1 in 0-based = Row 2 in 1-based */
+  grid-column: 3;     /* Column 1 in 0-based = Column 2 in 1-based */
+  
+  background-color: #F2F3ED;
+}
+
+.button3 {
+  width: 50px;
+  height: 50px;
+  grid-row: 3;        /* Row 1 in 0-based = Row 2 in 1-based */
+  grid-column: 3;     /* Column 2 in 0-based = Column 3 in 1-based */
+  background-color: #F2F3ED;
+}
+
+.button-icon {
+    width: 24px;
+    height: 24px;
+    grid-row: 0 / span 1;
+    grid-column: 0 / span 1;
+    position: absolute;
+    right: 13px;
+    top: 80px;
+}
+
+.copyright-section {
+    display: flex;
+    width: 104px;
+    height: 38px;
+    padding: 2px;
+    justify-content: right;
+    align-items: center;
+    flex-shrink: 0;
+    position: absolute;
+    top: 385px;
+    left: 615px;
+    right: 49px;
+    bottom: 92px;
+}
 .looper-plugin {
     width: 540px;
     height: 400px;
-    background: white;
-    border: 0px solid black;
+    
+    background: #F2F3ED;
+    border: 0px solid #0B090A;
     padding-left: 40px;
     padding-right: 40px;
     font-family: 'Helvetica', Arial, sans-serif;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+    color: #0B090A;
 }
 
-.plugin-header {
+.plugin-header-bak {
     text-align: left;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     font-size: 10px;
     align-items: baseline;
-}
+} 
 
-.plugin-title {
+.plugin-title-bak {
     font-weight: bold;
-    color: black;
+    color: #0B090A;
     grid-column: 1;
     grid-row: 1;
 }
@@ -32,7 +230,7 @@
     font-style: italic;
     font-weight: normal;
     font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-    color: black;
+    color: #0B090A;
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
@@ -63,7 +261,8 @@
 }
 
 .control-section {
-    background: white;
+    
+     background: #F2F3ED;
     display: flex;
     flex-direction: column;
     height: 30%;
@@ -74,45 +273,20 @@
     min-width: 100%;
 }
 
-.transport-section {
-    padding-bottom: 10px;
-}
-
-.modulation-section {
-    grid-column: 1 / -1;
-    flex-direction: column;
-    padding-bottom: 10px;
-}
-
 .section-title {
     font-size: 14px;
     font-weight: normal;
     margin: 0 0 12px 0;
-    color: black;
-    border-bottom: 1px solid black;
+    color: #0B090A;
+    border-bottom: 1px solid #0B090A;
     padding-bottom: 4px;
 }
 
-.slider-container {
-    margin-bottom: 12px;
-}
-
-.slider-label {
-    font-size: 12px;
-    color: black;
-    margin-bottom: 4px;
-}
 
 .button-row {
     display: flex;
     min-width: 100%;
     align-items: center;
-}
-
-.checkbox-label {
-    font-size: 12px;
-    color: black;
-    cursor: pointer;
 }
 
 .mod-controls {
