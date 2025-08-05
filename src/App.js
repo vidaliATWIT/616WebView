@@ -28,11 +28,15 @@ import loadIcon from './res/icons/load_preset.svg?react';
 const MetalSlider = styled(Slider)(({ theme }) => ({
   color: '#000000',
   left: '-19px',
+  transform: 'scaleY(0.9)',
+  transformOrigin: 'center',
   '& .MuiSlider-track': {
+    borderRadius: 0,
     border: 'none',
     backgroundColor: '#A83112',
   },
   '& .MuiSlider-rail': {
+    transform: 'scaleY(1.1) translateX(-50%)',
     width: '100%',
     backgroundColor: '#A83112',
     borderRadius: 0,
@@ -522,11 +526,19 @@ function App() {
           <div className="button1">
             <MetalButton 
               iconPath={saveIcon}
+              onClick={() => {
+                savePreset();
+                console.log("Save")
+              }}
             />
           </div>
           <div className="button2">
             <MetalButton 
               iconPath={loadIcon}
+              onClick={() => {
+                loadPreset();
+                console.log("Save")
+              }}
             />
           </div>
         </div>
