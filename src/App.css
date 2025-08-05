@@ -15,7 +15,7 @@ html, body {
     width: 768px;
     height: 515px;
     background-color: #0B090A;
-    /* background: url("/src/res/icons/616_ref.png");*/
+    /*background: url("/src/res/icons/616_ref.png");*/
 }
 
 
@@ -79,8 +79,6 @@ html, body {
     line-height: normal;
 }
 
-
-
 .slider-block {
     display: inline-flex;
     gap: 22px;
@@ -143,10 +141,7 @@ html, body {
 }
 
 .button-label-svg {
-    color: #F2F3ED;
-    display: flex;
-    width: 132px;
-    height: 50px;
+    transform: translateX(63%);
 }
 
 .button1 {
