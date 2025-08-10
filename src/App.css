@@ -1,5 +1,5 @@
 :root {
-    --width-scale: .921;
+    --width-scale: 0.9796;
     --height-scale: 1.0;
 }
 
@@ -73,7 +73,13 @@ html, body {
     height: calc(345px*var(--height-scale));
     display: flex;
     flex-direction: column;
-    align-items: left; /* This will center the slider-block horizontally */
+    align-items: center; /* This will center the slider-block horizontally */
+}
+
+.slider-container-solo {
+    height: calc(345px*var(--height-scale));
+    display: flex;
+    flex-direction: column;
 }
 
 .slider-label {
@@ -102,8 +108,8 @@ html, body {
 .slider-block {
     display: inline-flex;
     gap: calc(22px*var(--width-scale));
-    justify-content: lfet; /* Centers items within the slider-block */
-    align-items: left; /* Valid alignment property */
+    justify-content: start; /* Centers items within the slider-block */
+    align-items: center; /* Valid alignment property */
 
 }
 
@@ -118,13 +124,23 @@ html, body {
     align-items: center;
     gap: calc(22px*var(--width-scale));
     padding-top: calc(10px*var(--height-scale));
-    justify-content: left; /* Centers items within the slider-block */
+    justify-content: center; /* Centers items within the slider-block */
     align-items: center; 
+}
+
+.label-block-solo {
+    display: flex;
+    width: calc(100px*var(--width-scale));
+    align-items: center;
+    gap: calc(22px*var(--width-scale));
+    padding-top: calc(10px*var(--height-scale));
+    justify-content: star; /* Centers items within the slider-block */
+    align-items: start; 
 }
 
 .param-label {
     display: flex;
-    width: calc(39px*var(--width-scale));
+    width: calc(40px*var(--width-scale));
     height: calc(94px*var(--height-scale));
     flex-direction: row;
     justify-content: center;
