@@ -1,5 +1,5 @@
 :root {
-    --width-scale: 1.0;
+    --width-scale: .921;
     --height-scale: 1.0;
 }
 
@@ -17,7 +17,7 @@ html, body {
 
 .plugin-window {
     margin: 0px;
-    width: calc(768px * var(--width-scale));
+    width: calc(745px * var(--width-scale));
     height: calc(515px * var(--height-scale));
     background-color: #0B090A;
     /*background: url("/src/res/icons/616_ref.png");*/
@@ -46,7 +46,7 @@ html, body {
 .plugin-icon {
     position: absolute;
     top: calc(-3px*var(--height-scale));
-    left: calc(599px*var(--width-scale));
+    left: calc(565px*var(--width-scale));
     width: calc(82px*var(--width-scale));
     height: calc(82px*var(--height-scale));
     aspect-ratio: 1/1;
@@ -67,16 +67,16 @@ html, body {
     padding-bottom: calc(2px*var(--height-scale));
     align-items: center;
     gap: calc(53px*var(--width-scale));
-
 }
 
 .slider-container {
-    width: calc(100px*var(--width-scale));
     height: calc(345px*var(--height-scale));
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* This will center the slider-block horizontally */
 }
 
 .slider-label {
-    width: calc(104px*var(--width-scale));
     height: calc(36px*var(--height-scale));
     flex-shrink: 0;
     color: #F2F3ED;
@@ -87,14 +87,28 @@ html, body {
     font-weight: 400;
     line-height: normal;
 }
+.slider-label-center {
+    height: calc(36px*var(--height-scale));
+    flex-shrink: 0;
+    color: #F2F3ED;
+    text-align: left;
+    font-family: "Helvetica Neue";
+    font-size: calc(22px*var(--width-scale));
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
 .slider-block {
     display: inline-flex;
     gap: calc(22px*var(--width-scale));
+    justify-content: lfet; /* Centers items within the slider-block */
+    align-items: left; /* Valid alignment property */
+
 }
 
 .slider {
-    width: calc(39px*var(--width-scale));
+    width: calc(39px);
     height: calc(204px*var(--height-scale));
 }
 
@@ -104,6 +118,8 @@ html, body {
     align-items: center;
     gap: calc(22px*var(--width-scale));
     padding-top: calc(10px*var(--height-scale));
+    justify-content: left; /* Centers items within the slider-block */
+    align-items: center; 
 }
 
 .param-label {
@@ -118,7 +134,7 @@ html, body {
 .plugin-buttons {
     position: absolute;
     top: calc(179px*var(--height-scale));
-    left: calc(505px*var(--width-scale));
+    left: calc(471px*var(--width-scale));
     display: flex;
     width: calc(214px*var(--width-scale));
     padding-top: calc(2px*var(--height-scale));
@@ -151,12 +167,12 @@ html, body {
 }
 
 .button-label-svg {
-    transform: translateX(63%);
+    transform: translateX(63%) translateY(-10%);
 }
 
 .button {
     width: calc(45px*var(--width-scale));
-    height: calc(45px*var(--height-scale));
+    height: calc(45px*var(--width-scale));
 }
 
 .button1 {
@@ -191,7 +207,7 @@ html, body {
     flex-shrink: 0;
     position: absolute;
     top: calc(385px*var(--height-scale));
-    left: calc(615px*var(--width-scale));
+    left: calc(581px*var(--width-scale));
     right: calc(49px*var(--width-scale));
     bottom: calc(92px*var(--height-scale));
 }
