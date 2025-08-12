@@ -110,12 +110,13 @@ html, body {
     gap: calc(22px*var(--width-scale));
     justify-content: start; /* Centers items within the slider-block */
     align-items: center; /* Valid alignment property */
-
 }
 
 .slider {
     width: calc(39px);
     height: calc(204px*var(--height-scale));
+    transform: translateY();
+    background-color: #0B090A;
 }
 
 .label-block {

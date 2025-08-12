@@ -28,17 +28,19 @@ import loadIcon from './res/icons/load_preset.svg?react';
 // Current window size:     width: 768px;height: 515px;
 
 const MetalSlider = styled(Slider)(({ theme }) => ({
-  color: '#000000',
+  color: '#0B090A',
   transform: 'scaleY(0.9) translateX(-64.5%)',
   transformOrigin: 'center',
   '& .MuiSlider-track': {
     borderRadius: 0,
     border: 'none',
     backgroundColor: '#A83112',
+    width: '100%',
   },
   '& .MuiSlider-rail': {
-    transform: 'scaleY(1.1) translateX(-50%)',
+    transform: 'scaleY(.1) translateX(-50%) translateY(500%)',
     width: '100%',
+    height: '100%',
     backgroundColor: '#A83112',
     borderRadius: 0,
     opacity: 1,
