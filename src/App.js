@@ -30,7 +30,7 @@ import loadIcon from './res/icons/load_preset.svg?react';
 const MetalSlider = styled(Slider)(({ theme }) => ({
   color: '#0B090A',
   transform: 'scaleY(0.9) translateX(-64.5%)',
-  transformOrigin: 'center',
+  transformOrigin: 'center', 
   '& .MuiSlider-track': {
     borderRadius: 0,
     border: 'none',
@@ -53,7 +53,7 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
     border: 'none',
     boxShadow: 'none',
     // The key: make the thumb smaller so it fits within bounds
-    width: '100%', // Reduced from 10 to 8
+    width: '130%', // Reduced from 10 to 8
     '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
       boxShadow: 'none',
       backgroundColor: '#cd3b17ff',

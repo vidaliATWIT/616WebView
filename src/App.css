@@ -116,7 +116,7 @@ html, body {
     width: calc(39px);
     height: calc(204px*var(--height-scale));
     transform: translateY();
-    background-color: #0B090A;
+    background-color: #A83112;
 }
 
 .label-block {
