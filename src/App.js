@@ -29,17 +29,17 @@ import loadIcon from './res/icons/load_preset.svg?react';
 
 const MetalSlider = styled(Slider)(({ theme }) => ({
   color: '#0B090A',
-  transform: 'scaleY(0.9) translateX(-64.5%)',
+  transform: 'scaleY(0.905) translateX(-71.5%) translateY(-.2%)',
   transformOrigin: 'center', 
   '& .MuiSlider-track': {
     borderRadius: 0,
     border: 'none',
     backgroundColor: '#A83112',
-    width: '100%',
+    width: '35px',
   },
   '& .MuiSlider-rail': {
-    transform: 'scaleY(.1) translateX(-50%) translateY(500%)',
-    width: '100%',
+    transform: 'scaleY(.1) translateX(-50%) translateY(505%)',
+    width: '35px',
     height: '100%',
     backgroundColor: '#A83112',
     borderRadius: 0,
@@ -53,7 +53,7 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
     border: 'none',
     boxShadow: 'none',
     // The key: make the thumb smaller so it fits within bounds
-    width: '130%', // Reduced from 10 to 8
+    width: '35px', // Reduced from 10 to 8
     '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
       boxShadow: 'none',
       backgroundColor: '#cd3b17ff',

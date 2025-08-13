@@ -113,10 +113,10 @@ html, body {
 }
 
 .slider {
-    width: calc(39px);
+    width: calc(35px);
     height: calc(204px*var(--height-scale));
     transform: translateY();
-    background-color: #A83112;
+    background-color: #a83012b5;
 }
 
 .label-block {
