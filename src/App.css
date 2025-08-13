@@ -103,6 +103,7 @@ html, body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    transform: translateX(-2.5px);
 }
 
 .slider-block {
@@ -127,7 +128,6 @@ html, body {
     padding-top: calc(10px*var(--height-scale));
     justify-content: center; /* Centers items within the slider-block */
     align-items: center; 
-    background-color: rgba(0, 139, 139, 0.288);
 }
 
 .label-block-solo { 
