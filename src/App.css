@@ -1,6 +1,7 @@
 :root {
     --width-scale: 0.9208;
     --height-scale: 1.0;
+    background-color: #0B090A;
 }
 
 * {
