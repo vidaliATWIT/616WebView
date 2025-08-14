@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.94a8fadc.css",
+    "main.js": "/static/js/main.1a58e818.js",
+    "static/js/453.f4994c36.chunk.js": "/static/js/453.f4994c36.chunk.js",
+    "static/media/cillic_logo.png": "/static/media/cillic_logo.0b21e99b31c191bbe54f.png",
+    "static/media/freeze.svg?react": "/static/media/freeze.1b0b5a5601e39324890849e296242264.svg",
+    "index.html": "/index.html",
+    "static/media/direction.svg?react": "/static/media/direction.a5b990dcdb8f6056f9918567ded42c02.svg",
+    "static/media/save_preset.svg?react": "/static/media/save_preset.8fab1fa193d7b9874cd53058d7c10b8a.svg",
+    "static/media/load_preset.svg?react": "/static/media/load_preset.dd19d7c74af653e4cf1aa56f7b86f5bc.svg",
+    "static/media/collapse.svg?react": "/static/media/collapse.79427a21b7d7c4632deac4a96db1d38e.svg",
+    "static/media/expand.svg?react": "/static/media/expand.bcdca4148f00a84476cfa1b2ce47a386.svg",
+    "main.94a8fadc.css.map": "/static/css/main.94a8fadc.css.map",
+    "main.1a58e818.js.map": "/static/js/main.1a58e818.js.map",
+    "453.f4994c36.chunk.js.map": "/static/js/453.f4994c36.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.94a8fadc.css",
+    "static/js/main.1a58e818.js"
+  ]
+}
