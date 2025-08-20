@@ -76,7 +76,7 @@ html, body {
 }
 
 .slider-label {
-    width: calc(104px*var(--width-scale));
+    width: calc(92px*var(--width-scale));
     height: calc(36px*var(--height-scale));
     flex-shrink: 0;
     color: #F2F3ED;
@@ -94,13 +94,15 @@ html, body {
 }
 
 .slider {
-    width: calc(39px*var(--width-scale));
+    width: calc(35px);
     height: calc(204px*var(--height-scale));
+    transform: translateY();
+    background-color: #a83012b5;
 }
 
 .label-block {
     display: flex;
-    width: calc(100px*var(--width-scale));
+    width: calc(92px*var(--width-scale));
     align-items: center;
     gap: calc(22px*var(--width-scale));
     padding-top: calc(10px*var(--height-scale));
@@ -108,7 +110,7 @@ html, body {
 
 .param-label {
     display: flex;
-    width: calc(39px*var(--width-scale));
+    width: calc(35px*var(--width-scale));
     height: calc(94px*var(--height-scale));
     flex-direction: row;
     justify-content: center;
