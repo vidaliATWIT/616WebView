@@ -405,7 +405,7 @@ function App() {
    return (
     <div className="plugin-window">
       <div className="plugin-header">
-        <h1 className="plugin-title">616 DELAY & LOOPER</h1>
+        <h1 className="plugin-title">616 DIGITAL DELAY</h1>
         <div className="plugin-icon"></div>
       </div>
       <div className="plugin-sliders">
