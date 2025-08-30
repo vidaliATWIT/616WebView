@@ -35,11 +35,11 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
     borderRadius: 0,
     border: 'none',
     backgroundColor: '#A83112',
-    width: '35px',
+    width: 'calc(35px*var(--width-scale))',
   },
   '& .MuiSlider-rail': {
     transform: 'scaleY(.1) translateX(-50%) translateY(505%)',
-    width: '35px',
+    width: 'calc(35px*var(--width-scale))',
     height: '100%',
     backgroundColor: '#A83112',
     borderRadius: 0,
@@ -53,7 +53,7 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
     border: 'none',
     boxShadow: 'none',
     // The key: make the thumb smaller so it fits within bounds
-    width: '35px', // Reduced from 10 to 8
+    width: 'calc(35px*var(--width-scale))', // Reduced from 10 to 8
     '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
       boxShadow: 'none',
       backgroundColor: '#cd3b17ff',
@@ -72,7 +72,7 @@ const MetalTypography = styled(Typography)(({ theme }) => ({
   color: '#000000',
   backgroundColor: '#ffffff',
   position: 'relative',
-  left: '-19px',
+  left: 'calc(-19px*calc(--width-scale))',
   width: '100%'
 }));
 
@@ -417,7 +417,7 @@ function App() {
           </div>
           <div className="label-block">
             <div className="param-label">
-              <svg width="16" height="46" viewBox="0 0 16 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="calc(16px*var(--width-scale))" height="calc(46px*var(--height-scale))" viewBox="0 0 16 46" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0.291999 45.9363V35.6183H2.052V43.8463H7.046V36.6303H8.806V43.8463H16V45.9363H0.291999ZM0.291999 33.2155V31.1255H16V33.2155H0.291999ZM0.291999 27.6322V25.4102L13.03 17.1382V17.0942H0.291999V15.1142H16V17.4022L3.394 25.6082V25.6522H16V27.6322H0.291999ZM0.291999 11.7332V0.887218H2.052V9.64322H7.046L7.046 1.48122H8.806L8.806 9.64322H14.24L14.24 0.821219H16L16 11.7332H0.291999Z" fill="#F2F3ED"/>
               </svg>
             </div>

@@ -94,9 +94,8 @@ html, body {
 }
 
 .slider {
-    width: calc(35px);
+    width: calc(35px*var(--width-scale));
     height: calc(204px*var(--height-scale));
-    transform: translateY();
     background-color: #a83012b5;
 }
 
