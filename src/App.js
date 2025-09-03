@@ -20,10 +20,11 @@ import { styled } from '@mui/material/styles';
 // Usage
 import expandIcon from './res/icons/expand.svg?react';
 import collapseIcon from './res/icons/collapse.svg?react';
-import directionIcon from './res/icons/direction.svg?react';
+import directionIcon from './res/icons/rewind-start-fill.svg?react';
 import freezeIcon from './res/icons/freeze.svg?react';
 import saveIcon from './res/icons/save_preset.svg?react';
 import loadIcon from './res/icons/load_preset.svg?react';
+import bypassIcon from './res/icons/shut-down-line.svg?react';
 
 // Current window size:     width: 768px;height: 515px;
 
@@ -37,7 +38,7 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
   },
   '& .MuiSlider-rail': {
     height: '100%',
-    backgroundColor:'#0B090A',
+    backgroundColor:'#161215ff',
     borderRadius: '20px',
     width: '6px',
     opacity: 1,
@@ -422,7 +423,15 @@ function App() {
             />
           </div>
           </div>
-
+          <div className="p-button">
+            <div className="button button2">
+              <JuceCheckbox
+                iconType="grayed"
+                iconPath={bypassIcon}
+                identifier="bypass" title="Bypass"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="plugin-body">
