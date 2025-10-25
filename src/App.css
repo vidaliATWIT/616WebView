@@ -54,8 +54,7 @@ html, body {
     flex-shrink: 0;
     aspect-ratio: 1/1;
     background: url("/src/res/icons/cillic_logo.png");
-    background-size: cover; /* or contain */
-}
+    background-size: cover;
 
 .plugin-title {
     width: 225px;
@@ -226,4 +225,5 @@ html, body {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
 }

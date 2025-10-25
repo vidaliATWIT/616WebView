@@ -50,12 +50,10 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
     backgroundColor: '#A83112',
     border: 'none',
     boxShadow: 'none',
-    // The key: make the thumb smaller so it fits within bounds
-    width: '', // Reduced from 10 to 8
+    width: '',
     '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
       boxShadow: 'none',
       backgroundColor: '#cd3b17ff',
-      // Keep the same size on hover/focus
     },
     '&:before': {
       display: 'none',
@@ -142,25 +140,25 @@ checkedIcon={checkedIconElement}
 />
  );
 })(({ theme }) => ({
-padding: '10%', // Converted from 4px (4/768 * 100 = 0.52%)
+padding: '10%', 
 width: '100%',
 height: '100%',
 display: 'block',
 '& .MuiSvgIcon-root': {
-fontSize: '2.34%', // Converted from 18px (18/768 * 100 = 2.34%)
+fontSize: '2.34%',
 color: '#000000',
  },
 '&:not(.Mui-checked) .MuiSvgIcon-root': {
 backgroundColor: '#ffffff',
-borderRadius: '0.26%', // Converted from 2px (2/768 * 100 = 0.26%)
+borderRadius: '0.26%', 
  },
 '&.Mui-checked .MuiSvgIcon-root': {
 color: '#ffffff',
-borderRadius: '0.26%', // Converted from 2px (2/768 * 100 = 0.26%)
+borderRadius: '0.26%', 
  },
 '&:hover': {
-backgroundColor: '#b5b0b4', // lightgrey
-borderRadius: '0%', // Converted from 0px (already 0, but made explicit)
+backgroundColor: '#b5b0b4',
+borderRadius: '0%', 
  },
 }));
 
@@ -168,10 +166,10 @@ const MetalFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
   margin: 0,
   '& .MuiFormControlLabel-label': {
     fontFamily: 'Helvetica, Arial, sans-serif',
-    fontSize: '1.82%', // Converted from 14px (14/768 * 100 = 1.82%)
+    fontSize: '1.82%', 
     fontWeight: 'normal',
     color: '#000000',
-    marginLeft: '0.375em', // Converted from 6px to em (6/16 = 0.375em, assuming 16px base font size)
+    marginLeft: '0.375em',
   },
 }));
 
@@ -270,10 +268,10 @@ function floorToPowerOfTwo(n) {
         step={1 / (properties.numSteps - 1)}
         onChangeCommitted={changeCommitted}
         onMouseDown={mouseDown}
-        orientation="vertical" // Add this line
+        orientation="vertical"
         sx={{ 
           flexGrow: 1,
-          height: scaledHeight, // You'll need to specify a height for vertical sliders
+          height: scaledHeight, 
         }}
       />
       
