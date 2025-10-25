@@ -29,7 +29,7 @@ import bypassIcon from './res/icons/shut-down-line.svg?react';
 // Current window size:     width: 768px;height: 515px;
 
 const MetalSlider = styled(Slider)(({ theme }) => ({
-  color: '#0B090A',
+  color: '#b5b0b4',
   transform: 'scaleY(.9) translateX(-50%) translateY(3%)',
   '& .MuiSlider-track': {
     height: '100%',
@@ -38,7 +38,7 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
   },
   '& .MuiSlider-rail': {
     height: '100%',
-    backgroundColor:'#161215ff',
+    backgroundColor:'#b5b0b4',
     borderRadius: '20px',
     width: '6px',
     opacity: 1,
@@ -75,92 +75,93 @@ const MetalTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const MetalButton = styled(({ iconPath, children, ...props }) => {
-  let iconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', filter: 'brightness(0) saturate(100%) invert(85%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'}} />;
-  return (
-    <Button {...props}> 
-      {iconElement}
-    </Button>
-  );
+ let iconElement = <img src={iconPath} alt="" style={{ 
+   width: '100%', 
+   height: '100%', 
+   filter: 'brightness(0) saturate(100%) invert(37%) sepia(73%) saturate(2376%) hue-rotate(347deg) brightness(93%) contrast(93%)'
+ }} />;
+return (
+<Button {...props}>
+{iconElement}
+</Button>
+ );
 })(({ theme }) => ({
-
-  borderRadius: 0,
-  minWidth: '0',
-  padding: '10%',
-  width: '100%',
-  height: '100%',
-  display: 'block',
-  color: '#000000',
-  boxShadow: 'none',
-
-  '& .MuiButton-label': {
-    transform: 'translateX(26.04%)',
-  },
-  '&:hover': {
-    boxShadow: 'none',
-    filter: 'opacity(0.4)',
-  },
-  '&:active': {
-    boxShadow: 'none',
-  },
-  '&:focus': {
-    boxShadow: 'none',
-  },
-  '&:disabled': {
-    color: '#000000',
-    opacity: 0.6,
-  },
+borderRadius: 0,
+minWidth: '0',
+padding: '10%',
+width: '100%',
+height: '100%',
+display: 'block',
+color: '#000000',
+boxShadow: 'none',
+'& .MuiButton-label': {
+transform: 'translateX(26.04%)',
+ },
+'&:hover': {
+boxShadow: 'none',
+filter: 'opacity(0.4)',
+ },
+'&:active': {
+boxShadow: 'none',
+ },
+'&:focus': {
+boxShadow: 'none',
+ },
+'&:disabled': {
+color: '#000000',
+opacity: '0.6',
+ },
 }));
-
 const MetalCheckbox = styled(({ uncheckedIconPath, checkedIconPath, iconPath, iconType, ...props }) => {
-  let iconElement = null;
-  let checkedIconElement = null;
-  
-  if (uncheckedIconPath && checkedIconPath) {
-    // Dual icons
-    iconElement = <img src={uncheckedIconPath} alt="" style={{ width: '100%', height: '100%' }} />;
-    checkedIconElement = <img src={checkedIconPath} alt="" style={{ width: '100%', height: '100%' }} />;
-  } else if (iconPath && iconType === 'flipped') {
-    // Flipped icon
-    iconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%' }} />;
-    checkedIconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', transform: 'scaleX(-1)' }} />;
-  } else if (iconPath && iconType === 'grayed') {
-    // Grayed icon
-    iconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', filter: 'grayscale(100%) opacity(0.2) brightness(0) saturate(100%) invert(85%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' }} />;
-    checkedIconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', filter: 'grayscale(0%) opacity(1) brightness(0) saturate(100%) invert(85%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' }} />;
-  } else if (iconPath) {
-    // Single icon (no transformation)
-    iconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%' }} />;
-    checkedIconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%' }} />;
-  }
-  
-  return (
-    <Checkbox
-      icon={iconElement}
-      checkedIcon={checkedIconElement}
-      {...props}
-    />
-  );
+ let iconElement = null;
+let checkedIconElement = null;
+const redFilter = 'brightness(0) saturate(100%) invert(37%) sepia(73%) saturate(2376%) hue-rotate(347deg) brightness(93%) contrast(93%)';
+
+if (uncheckedIconPath && checkedIconPath) {
+// Dual icons
+iconElement = <img src={uncheckedIconPath} alt="" style={{ width: '100%', height: '100%', filter: redFilter }} />;
+checkedIconElement = <img src={checkedIconPath} alt="" style={{ width: '100%', height: '100%', filter: redFilter }} />;
+ } else if (iconPath && iconType === 'flipped') {
+// Flipped icon
+iconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', filter: redFilter }} />;
+checkedIconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', transform: 'scaleX(-1)', filter: redFilter }} />;
+ } else if (iconPath && iconType === 'grayed') {
+// Grayed icon
+iconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', filter: 'grayscale(100%) opacity(0.2) brightness(0) saturate(100%) invert(37%) sepia(73%) saturate(2376%) hue-rotate(347deg) brightness(93%) contrast(93%)' }} />;
+checkedIconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', filter: 'grayscale(0%) opacity(1) brightness(0) saturate(100%) invert(37%) sepia(73%) saturate(2376%) hue-rotate(347deg) brightness(93%) contrast(93%)' }} />;
+ } else if (iconPath) {
+// Single icon (no transformation)
+iconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', filter: redFilter }} />;
+checkedIconElement = <img src={iconPath} alt="" style={{ width: '100%', height: '100%', filter: redFilter }} />;
+ }
+return (
+<Checkbox
+icon={iconElement}
+checkedIcon={checkedIconElement}
+{...props}
+/>
+ );
 })(({ theme }) => ({
-  padding: '10%', // Converted from 4px (4/768 * 100 = 0.52%)
-  width: '100%',
-  height: '100%',
-  display: 'block',
-  '& .MuiSvgIcon-root': {
-    fontSize: '2.34%', // Converted from 18px (18/768 * 100 = 2.34%)
-    color: '#000000',
-  },
-  '&:not(.Mui-checked) .MuiSvgIcon-root': {
-    backgroundColor: '#ffffff',
-    borderRadius: '0.26%', // Converted from 2px (2/768 * 100 = 0.26%)
-  },
-  '&.Mui-checked .MuiSvgIcon-root': {
-    color: '#ffffff',
-    borderRadius: '0.26%', // Converted from 2px (2/768 * 100 = 0.26%)
-  },
-  '&:hover': {
-    backgroundColor: '#2a2226ff', // lightgrey
-    borderRadius: '0%', // Converted from 0px (already 0, but made explicit)
-  },
+padding: '10%', // Converted from 4px (4/768 * 100 = 0.52%)
+width: '100%',
+height: '100%',
+display: 'block',
+'& .MuiSvgIcon-root': {
+fontSize: '2.34%', // Converted from 18px (18/768 * 100 = 2.34%)
+color: '#000000',
+ },
+'&:not(.Mui-checked) .MuiSvgIcon-root': {
+backgroundColor: '#ffffff',
+borderRadius: '0.26%', // Converted from 2px (2/768 * 100 = 0.26%)
+ },
+'&.Mui-checked .MuiSvgIcon-root': {
+color: '#ffffff',
+borderRadius: '0.26%', // Converted from 2px (2/768 * 100 = 0.26%)
+ },
+'&:hover': {
+backgroundColor: '#b5b0b4', // lightgrey
+borderRadius: '0%', // Converted from 0px (already 0, but made explicit)
+ },
 }));
 
 const MetalFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
@@ -399,7 +400,7 @@ function App() {
    return (
     <div className="plugin-window">
       <div className="plugin-header">
-        <h1 className="plugin-title">MIMETIME</h1>
+        <h1 className="plugin-title">MINIMIME</h1>
         <div className="preset-buttons">
           <div className="p-button">
             <div className="button button1">
@@ -422,15 +423,6 @@ function App() {
               }}
             />
           </div>
-          </div>
-          <div className="p-button">
-            <div className="button button2">
-              <JuceCheckbox
-                iconType="grayed"
-                iconPath={bypassIcon}
-                identifier="bypass" title="Bypass"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -458,14 +450,15 @@ function App() {
               </div>
             </div>
             <div className="t-button">
-              <div className="button">
+            <div className="button button2">
               <JuceCheckbox
                 iconType="grayed"
-                iconPath={directionIcon}
-                identifier="reverse" title="Reverse"
+                iconPath={bypassIcon}
+                identifier="bypass" title="Bypass"
               />
             </div>
-            </div>
+          </div>
+
           </div>
           <div className="icon-container">
           <div className="plugin-icon">
@@ -480,11 +473,13 @@ function App() {
             <h2 className="section-header">DLY</h2>
             <div className="slider-block">
               <div className="slider"><JuceSlider identifier="samplingRate" title="Coarse" /></div>
-              <div className="slider"><JuceSlider identifier="loopLength" title="Fine"/></div>
+              <div className="slider"><JuceSlider identifier="feedback" title="Feedback" /></div>
+              <div className="slider"><JuceSlider identifier="mix" title="Mix" /></div>
             </div>
             <div className="param-names">
-              <h3 className="param-name">speed</h3>
-              <h3 className="param-name">length</h3>
+              <h3 className="param-name">delay</h3>
+              <h3 className="param-name">regen</h3>
+              <h3 className="param-name">blend</h3>
             </div>
           </div>
           <div className="slider-container">
@@ -496,17 +491,6 @@ function App() {
             <div className="param-names">
               <h3 className="param-name">rate</h3>
               <h3 className="param-name">depth</h3>
-            </div>
-          </div>
-          <div className="slider-container">
-            <h2 className="section-header">MIX</h2>
-            <div className="slider-block">
-              <div className="slider"><JuceSlider identifier="feedback" title="Feedback" /></div>
-              <div className="slider"><JuceSlider identifier="mix" title="Mix" /></div>
-            </div>
-            <div className="param-names">
-              <h3 className="param-name">regen</h3>
-              <h3 className="param-name">blend</h3>
             </div>
           </div>
         </div>
