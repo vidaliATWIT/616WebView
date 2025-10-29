@@ -400,7 +400,7 @@ function App() {
    return (
     <div className="plugin-window">
       <div className="plugin-header">
-        <h1 className="plugin-title">MINIMIME</h1>
+        <h1 className="plugin-title">MINIMIME lite</h1>
         <div className="preset-buttons">
           <div className="p-button">
             <div className="button button1">
@@ -470,7 +470,7 @@ function App() {
 
         <div className="slider-section">
           <div className="slider-container">
-            <h2 className="section-header">DLY</h2>
+            <h2 className="section-header">ECHO</h2>
             <div className="slider-block">
               <div className="slider"><JuceSlider identifier="samplingRate" title="Coarse" /></div>
               <div className="slider"><JuceSlider identifier="feedback" title="Feedback" /></div>
