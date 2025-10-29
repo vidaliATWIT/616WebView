@@ -400,7 +400,7 @@ function App() {
    return (
     <div className="plugin-window">
       <div className="plugin-header">
-        <h1 className="plugin-title">MINIMIME lite</h1>
+        <h1 className="plugin-title">MIMETIME lite</h1>
         <div className="preset-buttons">
           <div className="p-button">
             <div className="button button1">
