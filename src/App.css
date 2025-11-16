@@ -61,7 +61,7 @@ html, body {
     height: 48px;
     flex-shrink: 0;
     color: #D9D9D9;
-    font-family: "Helvetica Neue";
+    font-family: "Arial";
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -126,7 +126,7 @@ html, body {
     flex-shrink: 0;
     color: #D9D9D9;
     text-align: center;
-    font-family: "Helvetica Neue";
+    font-family: "Arial";
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -216,7 +216,7 @@ html, body {
     flex-shrink: 0;
     color: #FFF;
     text-align: center;
-    font-family: "Helvetica Neue";
+    font-family: "Arial";
     font-size: 12px;
     font-style: normal;
     font-weight: 500;

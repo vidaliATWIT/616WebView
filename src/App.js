@@ -64,7 +64,7 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
 }));
 
 const MetalTypography = styled(Typography)(({ theme }) => ({
-  fontFamily: 'Helvetica, Arial, sans-serif',
+  fontFamily: 'Arial, Arial, sans-serif',
   fontSize: '12px',
   fontWeight: 'normal',
   color: '#000000',
@@ -166,7 +166,7 @@ const MetalCheckbox = styled(({ uncheckedIconPath, checkedIconPath, iconPath, ic
 const MetalFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
   margin: 0,
   '& .MuiFormControlLabel-label': {
-    fontFamily: 'Helvetica, Arial, sans-serif',
+    fontFamily: 'Arial, Arial, sans-serif',
     fontSize: '1.82%', // Converted from 14px (14/768 * 100 = 1.82%)
     fontWeight: 'normal',
     color: '#000000',
@@ -477,7 +477,7 @@ function App() {
 
         <div className="slider-section">
           <div className="slider-container">
-            <h2 className="section-header">DLY</h2>
+            <h2 className="section-header">DELAY</h2>
             <div className="slider-block">
               <div className="slider"><JuceSlider identifier="samplingRate" title="Coarse" /></div>
               <div className="slider"><JuceSlider identifier="loopLength" title="Fine"/></div>
