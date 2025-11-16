@@ -64,7 +64,7 @@ const MetalSlider = styled(Slider)(({ theme }) => ({
 }));
 
 const MetalTypography = styled(Typography)(({ theme }) => ({
-  fontFamily: 'Helvetica, Arial, sans-serif',
+  fontFamily: 'Arial, Arial, sans-serif',
   fontSize: '12px',
   fontWeight: 'normal',
   color: '#000000',
@@ -167,7 +167,7 @@ borderRadius: '0%', // Converted from 0px (already 0, but made explicit)
 const MetalFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
   margin: 0,
   '& .MuiFormControlLabel-label': {
-    fontFamily: 'Helvetica, Arial, sans-serif',
+    fontFamily: 'Arial, Arial, sans-serif',
     fontSize: '1.82%', // Converted from 14px (14/768 * 100 = 1.82%)
     fontWeight: 'normal',
     color: '#000000',
